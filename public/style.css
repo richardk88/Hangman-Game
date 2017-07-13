@@ -5,15 +5,14 @@
 }	
 
 .eachLetterBox {
-	padding: 30px;
+	padding: 23px;
 	margin: 8px;
 }
 
 .answerContainerBox {
-	background-color: white;
+	background-color: gray;
 	display: flex;
 	align-content: center;
 	font-size: 50px;
 	justify-content: center;
-	width: ;
 }
