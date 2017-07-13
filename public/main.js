@@ -9,13 +9,13 @@ for (var i = 0; i < alphabet.length; i++) {
 
 ///LETTER BOXES
 //create an array of words to randomize
-var listOfWords = ['car','bird','tree','bottle','laptop','conatenate','pseudocode'];
+var listOfWords = ['car','bird','tree','bottle','laptop','concatenate','pseudocode'];
 var randomNumber = Math.floor(listOfWords.length*Math.random());
 var randomWords = listOfWords[randomNumber].split('');
 
 //create and set number of blank text boxes to the length of randomWord
 for (var i = 0; i < randomWords.length; i++) {
-	$('#emptyLetterBoxes').append('<div class=" btn-primary white z-depth-3">' + randomWords[i] + '</div>');
+	$('#emptyLetterBoxes').append('<div class="eachLetterBox white z-depth-3">' + randomWords[i] + '</div>');
 }
 
 
