@@ -3,7 +3,7 @@
 var alphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 //loop through the alphabet and create buttons for each letter
 for (var i = 0; i < alphabet.length; i++) {
-	$('#lettersOnKeyboard').append('<div class="btn btn-primary cyan z-depth-3">' + alphabet[i] + '</div>');
+	$('#lettersOnKeyboard').append('<div class="btn example btn-primary cyan z-depth-3">' + alphabet[i] + '</div>');
 }
 
 
@@ -24,11 +24,13 @@ $('#emptyLetterBoxes').append(blankBox);
 
 //this function runs when a letter on the keyboard is clicked
 $('.btn').click(letterButtonClicked); 	//assigns the letter that was clicked to var letterClicked
+$('.example').click(function(event) {
+	$(event.currentTarget).addClass('disabled');
+})
 
 function letterButtonClicked () {
-	var letterClicked = (this.innerHTML).toLowerCase();
-	console.log(letterClicked)
 	// $(this).prop('disabled', true); 	//disables key after it's clicked
+	var letterClicked = (this.innerHTML).toLowerCase();
 	for (var i = 0; i < randomWords.length; i++) { 	//scans through every letter in the array
 		if (letterClicked === randomWords[i]) {  	//if the letter that was clicked equals the letters of the random word
 			blankBox[i] = letterClicked;		//then replace the blank space with the clicked letter
