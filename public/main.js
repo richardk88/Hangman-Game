@@ -13,8 +13,8 @@ var listOfWords = ['bazinga','canoodle','doodle','loopy','monkey','scootch','rac
 var randomNumber = Math.floor(listOfWords.length*Math.random());
 var randomWords = listOfWords[randomNumber].split(''); 
 var lives = 6;
-
-$('#remainingLives').append('6');
+var blackHearts = 0;
+hearts();
 
 //create and set number of blank text boxes to the length of randomWord
 var blankBox = [];
@@ -46,13 +46,37 @@ function letterButtonClicked () {
 
 	if (!(randomWords.indexOf(letterClicked) > -1)) {
 		lives -= 1;
-		$('#remainingLives').text(lives);
+		blackHearts += 1;
+		$('#remainingLives').empty();
+		hearts();
+		heartSilhouette();
 		}
 
 	if (lives < 1) {
 		$('.hiddenAnswer').text(randomWords.join(' '));
 		$('.btn').addClass('disabled');
 		setTimeout("alert('Game Over!')", 500);
+	}
+}
+
+///RESTART Button
+function restart () {
+	$('#restart').on('click',function(){
+		window.location.reload(true);
+	});
+}
+restart();
+
+///Hearts
+function hearts () {
+	for (var i = 0; i < lives; i++) {
+		$('#remainingLives').append('<img class="hearts" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/169px-Heart_coraz%C3%B3n.svg.png">');
+	}
+}
+
+function heartSilhouette () {
+	for (var i = 0; i < blackHearts; i++) {
+		$('#remainingLives').append('<img class="heartSilhouette" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/169px-Heart_coraz%C3%B3n.svg.png">');
 	}
 }
 
@@ -63,9 +87,6 @@ function letterButtonClicked () {
 
 ///WRONG
 //
-
-///RESTART Button
-
 
 
 
