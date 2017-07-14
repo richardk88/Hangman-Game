@@ -41,7 +41,7 @@ function letterButtonClicked () {
 
 	if (blankBox.indexOf('_ ') === -1) {
 		$('.btn').addClass('disabled');
-		alert('WINNER!')
+		setTimeout("alert('WINNER!')", 500);
 	}
 
 	if (!(randomWords.indexOf(letterClicked) > -1)) {
@@ -52,7 +52,7 @@ function letterButtonClicked () {
 	if (lives < 1) {
 		$('.hiddenAnswer').text(randomWords.join(' '));
 		$('.btn').addClass('disabled');
-		alert('Game Over!')
+		setTimeout("alert('Game Over!')", 500);
 	}
 }
 
