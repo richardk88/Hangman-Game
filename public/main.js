@@ -9,7 +9,7 @@ for (var i = 0; i < alphabet.length; i++) {
 
 ///LETTER BOXES
 //create an array of words to randomize
-var listOfWords = ['car','bird','tree','bottle','laptop','concatenate','pseudocode'];
+var listOfWords = ['car','bird','tree','bottle','laptop','apple','racecar'];
 var randomNumber = Math.floor(listOfWords.length*Math.random());
 var randomWords = listOfWords[randomNumber].split(''); 
 
