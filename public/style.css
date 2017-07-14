@@ -1,4 +1,4 @@
-.blankBoxes {
+.emptyAnswerBoxClass {
 	display: flex;
 	flex-direction: row;	
 	padding: 30px;
@@ -15,4 +15,9 @@
 	align-content: center;
 	font-size: 50px;
 	justify-content: center;
+}
+
+.heart {
+	max-width: 3%;
+	height: auto;
 }
