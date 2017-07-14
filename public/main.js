@@ -40,6 +40,7 @@ function letterButtonClicked () {
 	$('#emptyAnswerBox').text(blankBox.join(' '));
 
 	if (blankBox.indexOf('_ ') === -1) {
+		$('.btn').addClass('disabled');
 		
 	}
 
@@ -50,6 +51,7 @@ function letterButtonClicked () {
 
 	if (lives < 1) {
 		$('.hiddenAnswer').text(randomWords.join(' '));
+		$('.btn').addClass('disabled');
 		
 	}
 }
