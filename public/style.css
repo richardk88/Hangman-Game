@@ -23,9 +23,7 @@
 }
 
 .heartSilhouette {
-	-webkit-filter: contrast(0) sepia(100%) hue-rotate(190deg) saturate(2000%) brightness(500%);
- 	filter: contrast(0) sepia(30%) hue-rotate(-40deg) saturate(2000%) brightness(0%);
- 	opacity: 1;
+ 	filter: brightness(40%);
  	max-width: 3%;
 	height: auto;
 }

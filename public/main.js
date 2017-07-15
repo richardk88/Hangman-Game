@@ -9,7 +9,7 @@ for (var i = 0; i < alphabet.length; i++) {
 
 ///LETTER BOXES
 //create an array of words to randomize
-var listOfWords = ['bazinga','canoodle','doodle','loopy','monkey','scootch','racecar','spork','viper','wasabi','yahoo','basketball','penguin','slapstick','package'];
+var listOfWords = ['bazinga','canoodle','doodle','loopy','monkey','scootch','racecar','spork','viper','wasabi','yahoo','basketball','penguin','slapstick','package','cheesecake','sililoquy','footsie','occupancy','perseverance'];
 var randomNumber = Math.floor(listOfWords.length*Math.random());
 var randomWords = listOfWords[randomNumber].split(''); 
 var lives = 6;
@@ -70,13 +70,13 @@ restart();
 ///Hearts
 function hearts () {
 	for (var i = 0; i < lives; i++) {
-		$('#remainingLives').append('<img class="hearts" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/169px-Heart_coraz%C3%B3n.svg.png">');
+		$('#remainingLives').append('<img class="hearts" src="images/heart.png">');
 	}
 }
 
 function heartSilhouette () {
 	for (var i = 0; i < blackHearts; i++) {
-		$('#remainingLives').append('<img class="heartSilhouette" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Heart_coraz%C3%B3n.svg/169px-Heart_coraz%C3%B3n.svg.png">');
+		$('#remainingLives').append('<img class="heartSilhouette" src="images/heart.png">');
 	}
 }
 
