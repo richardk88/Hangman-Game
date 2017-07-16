@@ -3,11 +3,22 @@ h1, h2 {
 }
 
 body {
-	background: url('https://www.walldevil.com/wallpapers/w03/025271-abstract-background-gaussian-blur.jpg') no-repeat center center fixed; 
+	background: url('images/sky.jpg') no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+.ship {
+	max-width: 15%;
+	height: auto;
+}
+
+.moo {
+	max-width: 6%;
+	height: auto;
+	margin-top: 100px;
 }
 
 #restart {

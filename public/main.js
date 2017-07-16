@@ -1,19 +1,19 @@
 ///KEYBOARD
-function keyboard () {			//create 3 arrays for the qwerty keyboard
-	var keys1 = ['Q','W','E','R','T','Y','U','I','O','P'];	
-	var keys2 = ['A','S','D','F','G','H','J','K','L'];
-	var keys3 = ['Z','X','C','V','B','N','M'];
-	
-	for (var i = 0; i < keys1.length; i++) {		//loop through each letter in the keys1 array and create a button for each
-		$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys1[i] + '</div>');
-	}
-	for (var i = 0; i < keys2.length; i++) {		//loop through each letter in the keys2 array and create a button for each
-		$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys2[i] + '</div>');
-	}
-	for (var i = 0; i < keys3.length; i++) {		//loop through each letter in the keys3 array and create a button for each
-		$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys3[i] + '</div>');
-	}
+//create 3 arrays for the qwerty keyboard
+var keys1 = ['Q','W','E','R','T','Y','U','I','O','P'];	
+var keys2 = ['A','S','D','F','G','H','J','K','L'];
+var keys3 = ['Z','X','C','V','B','N','M'];
+
+for (var i = 0; i < keys1.length; i++) {		//loop through each letter in the keys1 array and create a button for each
+	$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys1[i] + '</div>');
 }
+for (var i = 0; i < keys2.length; i++) {		//loop through each letter in the keys2 array and create a button for each
+	$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys2[i] + '</div>');
+}
+for (var i = 0; i < keys3.length; i++) {		//loop through each letter in the keys3 array and create a button for each
+	$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys3[i] + '</div>');
+}
+
 
 ///ANSWER BOX
 //create an array of words to randomize
@@ -22,8 +22,8 @@ var randomNumber = Math.floor(animals.length*Math.random());
 var randomWords = animals[randomNumber].split(''); 
 var lives = 6;
 var blackHearts = 0;
-hearts();
 var answerBox = [];
+hearts();
 for (var i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
 	answerBox.push('_ ');
 }
@@ -84,6 +84,10 @@ function heartSilhouette () {
 		$('#remainingLives').append('<img class="heartSilhouette" src="images/heart.png">');
 	}
 }
+
+
+$('.spaceship').append('<img class="ship" src="images/spaceship.png">');
+$('.cow').append('<img class="moo" src="images/cow.png">');
 
 
 
