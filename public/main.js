@@ -1,32 +1,37 @@
 ///KEYBOARD
-//create an array for the alphabet
-var alphabet = ['Q','W','E','R','T','Y','U','I','O','P','A','S','D','F','G','H','J','K','L','Z','X','C','V','B','N','M'];
-//loop through the alphabet and create buttons for each letter
-for (var i = 0; i < alphabet.length; i++) {
-	$('#lettersOnKeyboard').append('<div class="btn example btn-primary cyan z-depth-3">' + alphabet[i] + '</div>');
+function keyboard () {			//create 3 arrays for the qwerty keyboard
+	var keys1 = ['Q','W','E','R','T','Y','U','I','O','P'];	
+	var keys2 = ['A','S','D','F','G','H','J','K','L'];
+	var keys3 = ['Z','X','C','V','B','N','M'];
+	
+	for (var i = 0; i < keys1.length; i++) {		//loop through each letter in the keys1 array and create a button for each
+		$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys1[i] + '</div>');
+	}
+	for (var i = 0; i < keys2.length; i++) {		//loop through each letter in the keys2 array and create a button for each
+		$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys2[i] + '</div>');
+	}
+	for (var i = 0; i < keys3.length; i++) {		//loop through each letter in the keys3 array and create a button for each
+		$('#lettersOnKeyboard').append('<div class="btn disableKey amber darken-3 z-depth-3">' + keys3[i] + '</div>');
+	}
 }
 
-
-///LETTER BOXES
+///ANSWER BOX
 //create an array of words to randomize
-var listOfWords = ['bazinga','canoodle','doodle','loopy','monkey','scootch','racecar','spork','viper','wasabi','yahoo','basketball','penguin','slapstick','package','cheesecake','sililoquy','footsie','occupancy','perseverance'];
-var randomNumber = Math.floor(listOfWords.length*Math.random());
-var randomWords = listOfWords[randomNumber].split(''); 
+var animals = ["aardvark", "alligator", "alpaca", "ant", "anteater", "antelope", "ape", "armadillo", "donkey", "baboon", "badger", "barracuda", "bat", "bear", "beaver", "bee", "bison", "boar", "buffalo", "butterfly", "camel", "caribou", "cat", "caterpillar", "cattle", "cheetah", "chicken", "chimpanzee", "chinchilla", "clam", "cobra", "cockroach", "cod", "coyote", "crab", "crane", "crocodile", "crow", "deer", "dinosaur", "dog", "dogfish", "dolphin", "donkey", "dove", "dragonfly", "duck", "dugong", "eagle", "eel", "elephant", "elk", "emu", "falcon", "ferret", "finch", "fish", "flamingo", "fly", "fox", "frog", "gazelle", "gerbil", "giraffe", "gnat", "goat", "goose", "goldfinch", "goldfish", "gorilla", "grasshopper", "gull", "hamster", "hare", "hawk", "hedgehog", "heron", "herring", "hippopotamus", "hornet", "horse", "human", "hummingbird", "hyena", "jackal", "jaguar", "jellyfish", "kangaroo", "koala", "kookabura", "lemur", "leopard", "lion", "llama", "lobster", "locust", "manatee", "mantis", "meerkat", "mole", "mongoose", "monkey", "moose", "mouse", "mosquito", "mule", "narwhal", "newt", "nightingale", "octopus", "ostrich", "otter", "owl", "ox", "oyster", "panda", "panther", "parrot", "partridge", "peafowl", "pelican", "penguin", "pheasant", "pig", "pigeon", "pony", "porcupine", "quail", "rabbit", "raccoon", "ram", "rat", "raven", "reindeer", "rhinoceros", "rook", "salamander", "salmon", "sandpiper", "sardine", "scorpion", "seahorse", "seal", "shark", "sheep", "shrew", "skunk", "snail", "snake", "sparrow", "spider", "squid", "squirrel", "starling", "stingray", "stinkbug", "stork", "swallow", "swan", "termite", "tiger", "toad", "trout", "turkey", "turtle", "viper", "vulture", "wallaby", "walrus", "wasp", "weasel", "whale", "wolf", "wolverine", "wombat", "woodcock", "woodpecker", "worm", "yak", "zebra"];
+var randomNumber = Math.floor(animals.length*Math.random());	
+var randomWords = animals[randomNumber].split(''); 
 var lives = 6;
 var blackHearts = 0;
 hearts();
-
-//create and set number of blank text boxes to the length of randomWord
-var blankBox = [];
-// var individualBox = $('<div class="eachLetterBox z-depth-4">' + blankBox + '</div>');
-for (var i = 0; i < randomWords.length; i++) {
-	blankBox.push('_ ');
+var answerBox = [];
+for (var i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
+	answerBox.push('_ ');
 }
-$('#emptyAnswerBox').append(blankBox);
+$('#emptyAnswerBox').append(answerBox);		
 
 //this function runs when a letter on the keyboard is clicked
 $('.btn').click(letterButtonClicked); 	//assigns the letter that was clicked to var letterClicked
-$('.example').click(function(event) {
+$('.disableKey').click(function(event) {
 	$(event.currentTarget).addClass('disabled');	//disables key after it's clicked
 })
 
@@ -34,14 +39,14 @@ function letterButtonClicked () {
 	var letterClicked = (this.innerHTML).toLowerCase();
 	for (var i = 0; i < randomWords.length; i++) { 	//scans through every letter in the array
 		if (letterClicked === randomWords[i]) {  	//if the letter that was clicked equals the letters of the random word
-			blankBox[i] = letterClicked;		//then replace the blank space with the clicked letter
+			answerBox[i] = letterClicked;		//then replace the blank space with the clicked letter
 		}
 	}
-	$('#emptyAnswerBox').text(blankBox.join(' '));
+	$('#emptyAnswerBox').text(answerBox.join(' '));
 
-	if (blankBox.indexOf('_ ') === -1) {
+	if (answerBox.indexOf('_ ') === -1) {
 		$('.btn').addClass('disabled');
-		setTimeout("alert('WINNER!')", 500);
+		setTimeout("alert('WINNER!')", 400);
 	}
 
 	if (!(randomWords.indexOf(letterClicked) > -1)) {
@@ -55,7 +60,7 @@ function letterButtonClicked () {
 	if (lives < 1) {
 		$('.hiddenAnswer').text(randomWords.join(' '));
 		$('.btn').addClass('disabled');
-		setTimeout("alert('Game Over!')", 500);
+		setTimeout("alert('Game Over!')", 400);
 	}
 }
 

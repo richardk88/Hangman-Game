@@ -1,13 +1,24 @@
+h1, h2 {
+	color: white;
+}
+
+body {
+	background: url('https://www.walldevil.com/wallpapers/w03/025271-abstract-background-gaussian-blur.jpg') no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+#restart {
+	background-color: #f0f4c3;
+}
+
 .emptyAnswerBoxClass {
 	display: flex;
 	flex-direction: row;	
 	padding: 30px;
 }	
-
-.eachLetterBox {
-	padding: 23px;
-	margin: 8px;
-}
 
 .answerContainerBox {
 	background-color: white;
@@ -23,7 +34,7 @@
 }
 
 .heartSilhouette {
- 	filter: brightness(40%);
+ 	filter: brightness(35%);
  	max-width: 3%;
 	height: auto;
 }
