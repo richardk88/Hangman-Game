@@ -22,24 +22,29 @@ var randomNumber = Math.floor(animals.length*Math.random());
 var randomWords = animals[randomNumber].split(''); 
 var lives = 6;					//players start with 6 lives.
 var blackHearts = 0;			//heart silhouettes start at 0 and increment based on incorrect guesses.
-var answerBox = [];				
+var answerBox = [];	
+var letterClicked = '';			
 hearts();
+area51();
 for (var i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
 	answerBox.push('_ ');
 }
 $('#emptyAnswerBox').append(answerBox);		
 
 //this function runs when a letter on the keyboard is clicked
-$('.btn').click(letterButtonClicked); 	//assigns the letter that was clicked to var letterClicked
-$('.disableKey').click(function(event) {
+$('.btn').on('click', function(){
+	letterClicked = $(event.target).text().toLowerCase();
+	letterButtonClicked(letterClicked);
+}); 	//assigns the letter that was clicked to var letterClicked
+$('.disableKey').on('click', function(event) {
 	$(event.currentTarget).addClass('disabled');	//disables key after it's clicked
 })
 
-function letterButtonClicked () {
-	var letterClicked = (this.innerHTML).toLowerCase();
+function letterButtonClicked (x) {
+	//var letterClicked = (this.innerHTML).toLowerCase();
 	for (var i = 0; i < randomWords.length; i++) { 	//scans through every letter in the array
-		if (letterClicked === randomWords[i]) {  	//if the letter that was clicked equals the letters of the random word
-			answerBox[i] = letterClicked;		//then replace the blank space with the clicked letter
+		if (x === randomWords[i]) {  	//if the letter that was clicked equals the letters of the random word
+			answerBox[i] = x;		//then replace the blank space with the clicked letter
 		}
 	}
 	$('#emptyAnswerBox').text(answerBox.join(' '));
@@ -49,20 +54,41 @@ function letterButtonClicked () {
 		setTimeout("alert('WINNER!')", 400);
 	}
 
-	if (!(randomWords.indexOf(letterClicked) > -1)) {
+	if (!(randomWords.indexOf(x) > -1)) {
 		lives -= 1;
 		blackHearts += 1;
 		$('#remainingLives').empty();
 		hearts();
 		heartSilhouette();
-		}
 
+	}
+	if (lives === 5) {
+		$('#cow-image').removeClass("moo").addClass('moo1');
+	}
+	if (lives === 4) {
+		$('#cow-image').removeClass("moo1").addClass('moo2');
+	}
+	if (lives === 3) {
+		$('#cow-image').removeClass("moo2").addClass('moo3');
+	}
+	if (lives === 2) {
+		$('#cow-image').removeClass("moo3").addClass('moo4');
+	}
+	if (lives === 1) {
+		$('#cow-image').removeClass("moo4").addClass('moo5');
+	}
+
+	
 	if (lives < 1) {
 		$('.hiddenAnswer').text(randomWords.join(' '));
 		$('.btn').addClass('disabled');
 		setTimeout("alert('Game Over!')", 400);
+		$('#cow-image').remove();
+
 	}
 }
+
+
 
 ///RESTART Button
 function restart () {
@@ -85,10 +111,12 @@ function heartSilhouette () {
 	}
 }
 
+///SPACESHIP & COW
+function area51 () {
+	$('.spaceship').append('<img class="ship" src="images/spaceship.png">');
+	$('.cow').append('<img class="moo" id="cow-image" src="images/cow.png">');
 
-$('.spaceship').append('<img class="ship" src="images/spaceship.png">');
-$('.cow').append('<img class="moo" src="images/cow.png">');
-
+}
 
 
 ///CORRECT
@@ -96,6 +124,7 @@ $('.cow').append('<img class="moo" src="images/cow.png">');
 
 ///WRONG
 //
+
 
 
 
