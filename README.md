@@ -22,7 +22,7 @@ As soon as a user logs into the site, they  will be presented with a keyboard, b
 
 ## WIREFRAME
 
-![Wireframe](images/wireframe.JPG)
+![Wireframe](http://imgur.com/q94di9u)
 
 ## Future Development
 
