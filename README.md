@@ -23,7 +23,7 @@ As soon as a user logs into the site, they  will be presented with a keyboard, b
 
 ## WIREFRAME
 
-http://imgur.com/q94di9u
+[Imgur](http://i.imgur.com/q94di9u.jpg)
 
 ## Future Development
 
