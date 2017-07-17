@@ -31,8 +31,7 @@ for (var i = 0; i < randomWords.length; i++) {	//loop through the length or rand
 }
 $('#emptyAnswerBox').append(answerBox);		
 
-//this function runs when a letter on the keyboard is clicked
-$('.btn').on('click', function(){
+$('.btn').on('click', function(){				//this function runs when a letter on the keyboard is clicked
 	letterClicked = $(event.target).text().toLowerCase();	//assigns the letter that was clicked to var letterClicked
 	letterButtonClicked(letterClicked);
 }); 	
@@ -41,47 +40,46 @@ $('.disableKey').on('click', function(event) {
 })
 
 function letterButtonClicked (x) {
-	//var letterClicked = (this.innerHTML).toLowerCase();
-	for (var i = 0; i < randomWords.length; i++) { 	//scans through every letter in the array
-		if (x === randomWords[i]) {  	//if the letter that was clicked equals the letters of the random word
-			answerBox[i] = x;		//then replace the blank space with the clicked letter
+	for (var i = 0; i < randomWords.length; i++) { 		//scans through every letter in the array
+		if (x === randomWords[i]) {  				//if the letter that was clicked equals the letters of the random word
+			answerBox[i] = x;					//then replace the blank space with the clicked letter
 		}
 	}
-	$('#emptyAnswerBox').text(answerBox.join(' '));
+	$('#emptyAnswerBox').text(answerBox.join(' '));		//
 
-	if (answerBox.indexOf('— ') === -1) {
-		$('.disableKey').addClass('disabled');
-		setTimeout("alert('CONGRATULATIONS!')", 300);
+	if (answerBox.indexOf('— ') === -1) {				//if dashes are gone
+		$('.disableKey').addClass('disabled');				//disable the keyboard
+		setTimeout("alert('CONGRATULATIONS!')", 300);			//and alert 'congratulations'
 	}
 
-	if (!(randomWords.indexOf(x) > -1)) {
-		lives -= 1;
-		blackHearts += 1;
-		$('#remainingLives').empty();
-		hearts();
-		heartSilhouette();
+	if (!(randomWords.indexOf(x) > -1)) {			//
+		lives -= 1;								// lives decrement by 1.
+		blackHearts += 1;							//blackHearts increment by 1.
+		$('#remainingLives').empty();					//removes all the child nodes from #remainingLives.
+		hearts();									//call the heart function.
+		heartSilhouette();						//call the heartSilhouette function.
 
 	}
-	if (lives === 5) {
+	if (lives === 5) {							//if lives = 5, remove default class 'moo' and add class 'moo1'.
 		$('#cow-image').removeClass("moo").addClass('moo1');
-	}
-	if (lives === 4) {
+	}			
+	if (lives === 4) {							//if lives = 4, remove default class 'moo1' and add class 'moo2'.
 		$('#cow-image').removeClass("moo1").addClass('moo2');
 	}
-	if (lives === 3) {
+	if (lives === 3) {							//if lives = 3, remove default class 'moo2' and add class 'moo3'.
 		$('#cow-image').removeClass("moo2").addClass('moo3');
 	}
-	if (lives === 2) {
+	if (lives === 2) {							//if lives = 2, remove default class 'moo3' and add class 'moo4'.
 		$('#cow-image').removeClass("moo3").addClass('moo4');
 	}
-	if (lives === 1) {
+	if (lives === 1) {							//if lives = 4, remove default class 'moo' and add class 'moo5'.
 		$('#cow-image').removeClass("moo4").addClass('moo5');
 	}
-	if (lives < 1) {
-		$('.hiddenAnswer').text(randomWords.join(' '));
-		$('.disableKey').addClass('disabled');
-		setTimeout("alert('GAME OVER! Chick-fil-A hates you right now.')", 300);
-		$('.main').empty().append('<img class="cloud9" src="images/cloud.png">');
+	if (lives < 1) {							//if lives < 1
+		$('.hiddenAnswer').text(randomWords.join(' '));			//show the answer
+		$('.disableKey').addClass('disabled');				//disable the keyboard
+		setTimeout("alert('GAME OVER! Chick-fil-A hates you right now.')", 300);	//alert 'game over'
+		$('.main').empty().append('<img class="cloud9" src="images/cloud.png">');	//remove child nodes from .main and add cloud image tag.
 
 	}
 }
@@ -89,7 +87,7 @@ function letterButtonClicked (x) {
 
 
 ///RESTART Button
-function restart () {
+function restart () {							//this function reloads the window when #restart button is clicked.
 	$('#restart').on('click',function(){
 		window.location.reload(true);
 	});
@@ -97,20 +95,19 @@ function restart () {
 restart();
 
 ///Hearts
-function hearts () {
+function hearts () {							//this function sets heart icons based on how many lives are left.
 	for (var i = 0; i < lives; i++) {
 		$('#remainingLives').append('<img class="hearts" src="images/heart.png">');
 	}
 }
 
-function heartSilhouette () {
-	for (var i = 0; i < blackHearts; i++) {
+function heartSilhouette () {					//this function sets heart silhouette icons based on incorrect guesses.
 		$('#remainingLives').append('<img class="heartSilhouette" src="images/heart.png">');
 	}
-}
+
 
 ///SPACESHIP & COW
-function area51 () {
+function area51 () {							//run this function to load images of the spaceship and cow.
 	$('.spaceship').append('<img class="ship" src="images/spaceship.png">');
 	$('.cow').append('<img class="moo" id="cow-image" src="images/cow.png">');
 }
@@ -121,13 +118,3 @@ function area51 () {
 
 ///WRONG
 //
-
-
-
-
-
-
-
-
-
-
