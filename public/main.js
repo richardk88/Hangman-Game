@@ -17,7 +17,7 @@ for (var i = 0; i < keys3.length; i++) {		//loop through each letter in the keys
 
 ///ANSWER BOX
 //create an array of words to randomize
-var animals = ["aardvark", "alligator", "alpaca", "ant", "anteater", "antelope", "ape", "armadillo", "donkey", "baboon", "badger", "barracuda", "bat", "bear", "beaver", "bee", "bison", "boar", "buffalo", "butterfly", "camel", "caribou", "cat", "caterpillar", "cattle", "cheetah", "chicken", "chimpanzee", "chinchilla", "clam", "cobra", "cockroach", "cod", "coyote", "crab", "crane", "crocodile", "crow", "deer", "dinosaur", "dog", "dogfish", "dolphin", "donkey", "dove", "dragonfly", "duck", "dugong", "eagle", "eel", "elephant", "elk", "emu", "falcon", "ferret", "finch", "fish", "flamingo", "fly", "fox", "frog", "gazelle", "gerbil", "giraffe", "gnat", "goat", "goose", "goldfinch", "goldfish", "gorilla", "grasshopper", "gull", "hamster", "hare", "hawk", "hedgehog", "heron", "herring", "hippopotamus", "hornet", "horse", "human", "hummingbird", "hyena", "jackal", "jaguar", "jellyfish", "kangaroo", "koala", "kookabura", "lemur", "leopard", "lion", "llama", "lobster", "locust", "manatee", "mantis", "meerkat", "mole", "mongoose", "monkey", "moose", "mouse", "mosquito", "mule", "narwhal", "newt", "nightingale", "octopus", "ostrich", "otter", "owl", "ox", "oyster", "panda", "panther", "parrot", "partridge", "peafowl", "pelican", "penguin", "pheasant", "pig", "pigeon", "pony", "porcupine", "quail", "rabbit", "raccoon", "ram", "rat", "raven", "reindeer", "rhinoceros", "rook", "salamander", "salmon", "sandpiper", "sardine", "scorpion", "seahorse", "seal", "shark", "sheep", "shrew", "skunk", "snail", "snake", "sparrow", "spider", "squid", "squirrel", "starling", "stingray", "stinkbug", "stork", "swallow", "swan", "termite", "tiger", "toad", "trout", "turkey", "turtle", "viper", "vulture", "wallaby", "walrus", "wasp", "weasel", "whale", "wolf", "wolverine", "wombat", "woodcock", "woodpecker", "worm", "yak", "zebra"];
+var animals = ["aardvark", "alligator", "alpaca", "ant", "anteater", "antelope", "ape", "armadillo", "donkey", "baboon", "badger", "barracuda", "bat", "bear", "beaver", "bee", "bison", "boar", "buffalo", "butterfly", "camel", "caribou", "cat", "caterpillar", "cattle", "cheetah", "chicken", "chimpanzee", "chinchilla", "clam", "cobra", "cockroach", "cod", "coyote", "crab", "crane", "crocodile", "crow", "deer", "dinosaur", "dog", "dogfish", "dolphin", "donkey", "dove", "dragonfly", "duck", "dugong", "eagle", "eel", "elephant", "elk", "emu", "falcon", "ferret", "finch", "fish", "flamingo", "fly", "fox", "frog", "gazelle", "gerbil", "giraffe", "gnat", "goat", "goose", "goldfinch", "goldfish", "gorilla", "grasshopper", "gull", "hamster", "hare", "hawk", "hedgehog", "heron", "herring", "hippopotamus", "hornet", "horse", "human", "hummingbird", "hyena", "jackal", "jaguar", "jellyfish", "kangaroo", "koala", "kookabura", "lemur", "leopard", "lion", "llama", "lobster", "locust", "manatee", "mantis", "meerkat", "mole", "mongoose", "monkey", "moose", "mouse", "mosquito", "mule", "narwhal", "newt", "nightingale", "octopus", "ostrich", "otter", "owl", "ox", "oyster", "panda", "panther", "parrot", "partridge", "peacock", "pelican", "penguin", "pheasant", "pig", "pigeon", "pony", "porcupine", "quail", "rabbit", "raccoon", "ram", "rat", "raven", "reindeer", "rhinoceros", "rook", "salamander", "salmon", "sandpiper", "sardine", "scorpion", "seahorse", "seal", "shark", "sheep", "shrew", "skunk", "snail", "snake", "sparrow", "spider", "squid", "squirrel", "starling", "stingray", "stinkbug", "stork", "swallow", "swan", "termite", "tiger", "toad", "trout", "turkey", "turtle", "viper", "vulture", "wallaby", "walrus", "wasp", "weasel", "whale", "wolf", "wolverine", "wombat", "woodcock", "woodpecker", "worm", "yak", "zebra"];
 var randomNumber = Math.floor(animals.length*Math.random());	
 var randomWords = animals[randomNumber].split(''); 
 var lives = 6;					//players start with 6 lives.
@@ -45,14 +45,14 @@ function letterButtonClicked (x) {
 			answerBox[i] = x;					//then replace the blank space with the clicked letter
 		}
 	}
-	$('#emptyAnswerBox').text(answerBox.join(' '));		//
+	$('#emptyAnswerBox').text(answerBox.join(' '));		//adds answer from letter arrary and displays it
 
 	if (answerBox.indexOf('— ') === -1) {				//if dashes are gone
 		$('.disableKey').addClass('disabled');				//disable the keyboard
 		setTimeout("alert('CONGRATULATIONS!')", 300);			//and alert 'congratulations'
 	}
 
-	if (!(randomWords.indexOf(x) > -1)) {			//
+	if (!(randomWords.indexOf(x) > -1)) {			//if the word does not have the letter 
 		lives -= 1;								// lives decrement by 1.
 		blackHearts += 1;							//blackHearts increment by 1.
 		$('#remainingLives').empty();					//removes all the child nodes from #remainingLives.
