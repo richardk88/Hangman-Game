@@ -1,4 +1,5 @@
 # Hangman-Game
+
 ##DESCRIPTION
 
 I created a Hangman game (Area 51 version) for my first project. 
@@ -11,7 +12,7 @@ As soon as a user logs into the site, they  will be presented with a keyboard, b
 
 	* Languages - HTML5, CSS3, Javascript, jQuery
 	* Design - Google Fonts, Materialize
-	* Project Planning & User Stories - <https://trello.com/b/dF68zn7m/wdi-project-1-hangman>
+	* Project Planning & User Stories == https://trello.com/b/dF68zn7m/wdi-project-1-hangman
 	*Editor - Sublime Text
 
 ## FEATURES
@@ -22,7 +23,7 @@ As soon as a user logs into the site, they  will be presented with a keyboard, b
 
 ## WIREFRAME
 
-![Wireframe]<http://imgur.com/q94di9u>
+http://imgur.com/q94di9u
 
 ## Future Development
 
