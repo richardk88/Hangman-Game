@@ -102,9 +102,10 @@ function hearts () {							//this function sets heart icons based on how many li
 }
 
 function heartSilhouette () {					//this function sets heart silhouette icons based on incorrect guesses.
+	for (var i = 0; i < blackHearts; i++) {	
 		$('#remainingLives').append('<img class="heartSilhouette" src="images/heart.png">');
 	}
-
+}
 
 ///SPACESHIP & COW
 function area51 () {							//run this function to load images of the spaceship and cow.

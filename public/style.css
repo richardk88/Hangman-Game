@@ -2,15 +2,19 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	align-items: center;
-	font-size: 50px;
+	align-items: flex-start;
+	margin-bottom: -50px;
 }
 
 .hangman-title {
-	font-size: 90px;
+	font-size: 80px;
+	display: flex;
+	flex-direction: row;
 }
 
 .area51 {
+	display: flex;
+	flex-direction: column;
 	font-size: 50px;
 	color: black;
 	-webkit-text-stroke: 1px green;
@@ -22,6 +26,7 @@
 	align-items: flex-start;
 	color: white;
 	font-size: 10px;
+	max-width: 40%;
 }
 
 .hearts {
@@ -118,10 +123,10 @@ footer {
 }
 
 .cloud9 {
-	max-width: 22%;
+	max-width: 20%;
 	height: auto;
-	padding-top: 6px;
-	padding-bottom: 5px;
+	margin-top: 15px;
+	margin-bottom: 21px;
 }
 
 #restart {
