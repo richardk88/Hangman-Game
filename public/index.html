@@ -4,6 +4,7 @@
 	<title>Hangman</title>
 	<link rel='stylesheet' href='style.css'>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<h1 class='center'>Hangman</h1>
@@ -25,13 +26,15 @@
 	</div>
 <br>
 
-	<div class='container'>
-		<div id='lettersOnKeyboard'></div>
+	<div class='container center'>
+		<div id='lettersOnKeyboard1'></div>
+		<div id='lettersOnKeyboard2'></div>
+		<div id='lettersOnKeyboard3'></div>
 	</div>
 
 <br>
 	<div class="center">
-		<button id="restart">NEW WORD</button>
+		<button id="restart"><i class="material-icons">replay</i></button>
 	</div>
 
 	<script
@@ -40,4 +43,8 @@
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js'></script>
     <script src='main.js'></script>
 </body>
+
+<footer class="center">
+	© 2017 by Richard Kim
+</footer>
 </html>

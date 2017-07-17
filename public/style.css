@@ -10,6 +10,19 @@ body {
 	background-size: cover;
 }
 
+footer {
+	margin: 100px 0px 20px 0px;
+}
+
+.btn {
+	margin: 3px;
+}
+
+.button {
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
 .ship {
 	max-width: 15%;
 	height: auto;
@@ -22,21 +35,21 @@ body {
 }
 
 #restart {
-	background-color: #f0f4c3;
+	background-color: #ffc707;
 }
 
-.emptyAnswerBoxClass {
-	display: flex;
-	flex-direction: row;	
-	padding: 30px;
+.emptyAnswerBoxClass {	
+	color: white;
 }	
 
 .answerContainerBox {
-	background-color: white;
+	background-color: rgba(0,0,0,.5);
 	display: flex;
 	align-content: center;
-	font-size: 50px;
 	justify-content: center;
+	font-size: 50px;
+	padding: 10px;
+	margin: 100px;
 }
 
 .hearts {
