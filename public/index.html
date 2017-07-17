@@ -4,29 +4,32 @@
 	<title>Hangman</title>
 	<link rel='stylesheet' href='style.css'>
 	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css'>
+	<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-	<h1 class='center'>Hangman</h1>
+	<div class="header">
+		<h1 class='center hangman-title'>Hangman: <a class='area51'>Area 51</a></h1>
+		
+		<div class="center">
+			<div class="scoreBox">
+				<h1 class='lives'>Lives:<span id="remainingLives"></span></h1>
+			</div>
+		</div>
+	</div>
 
 	<div class="center main">
 		<div class='spaceship'></div>
 		<div class='cow'></div>
 	</div>
-
-	<div class="center">
-		<div class="scoreBox">
-			Lives:
-			<span id="remainingLives"></span> 
-		</div>
-	</div>
+	<hr>
 
 	<div class='container center z-depth-3 answerContainerBox'>
 		<div id='emptyAnswerBox' class='emptyAnswerBoxClass hiddenAnswer'></div>
 	</div>
 <br>
 
-	<div class='container center'>
+	<div class='container center keys'>
 		<div id='lettersOnKeyboard1'></div>
 		<div id='lettersOnKeyboard2'></div>
 		<div id='lettersOnKeyboard3'></div>
@@ -34,7 +37,7 @@
 
 <br>
 	<div class="center">
-		<button id="restart"><i class="material-icons">replay</i></button>
+		<div id="restart" class="btn">replay<i class="material-icons right">replay</i></div>
 	</div>
 
 	<script

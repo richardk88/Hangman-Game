@@ -5,13 +5,13 @@ var keys2 = ['A','S','D','F','G','H','J','K','L'];
 var keys3 = ['Z','X','C','V','B','N','M'];
 
 for (var i = 0; i < keys1.length; i++) {		//loop through each letter in the keys1 array and create a button for each
-	$('#lettersOnKeyboard1').append('<div class="btn buttonCSS waves-effect waves-light disableKey green z-depth-9">' + keys1[i] + '</div>');
+	$('#lettersOnKeyboard1').append('<div id="buttonCSS" class="btn waves-effect waves-light disableKey green z-depth-9">' + keys1[i] + '</div>');
 }
 for (var i = 0; i < keys2.length; i++) {		//loop through each letter in the keys2 array and create a button for each
-	$('#lettersOnKeyboard2').append('<div class="btn buttonCSS waves-effect waves-light disableKey green z-depth-9">' + keys2[i] + '</div>');
+	$('#lettersOnKeyboard2').append('<div id="buttonCSS" class="btn waves-effect waves-light disableKey green z-depth-9">' + keys2[i] + '</div>');
 }
 for (var i = 0; i < keys3.length; i++) {		//loop through each letter in the keys3 array and create a button for each
-	$('#lettersOnKeyboard3').append('<div class="btn buttonCSS waves-effect waves-light disableKey green z-depth-9">' + keys3[i] + '</div>');
+	$('#lettersOnKeyboard3').append('<div id="buttonCSS" class="btn waves-effect waves-light disableKey green z-depth-9">' + keys3[i] + '</div>');
 }
 
 
@@ -27,15 +27,15 @@ var letterClicked = '';
 hearts();
 area51();
 for (var i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
-	answerBox.push('_ ');
+	answerBox.push('— ');
 }
 $('#emptyAnswerBox').append(answerBox);		
 
 //this function runs when a letter on the keyboard is clicked
 $('.btn').on('click', function(){
-	letterClicked = $(event.target).text().toLowerCase();
+	letterClicked = $(event.target).text().toLowerCase();	//assigns the letter that was clicked to var letterClicked
 	letterButtonClicked(letterClicked);
-}); 	//assigns the letter that was clicked to var letterClicked
+}); 	
 $('.disableKey').on('click', function(event) {
 	$(event.currentTarget).addClass('disabled');	//disables key after it's clicked
 })
@@ -49,9 +49,9 @@ function letterButtonClicked (x) {
 	}
 	$('#emptyAnswerBox').text(answerBox.join(' '));
 
-	if (answerBox.indexOf('_ ') === -1) {
-		$('.btn').addClass('disabled');
-		setTimeout("alert('WINNER!')", 400);
+	if (answerBox.indexOf('— ') === -1) {
+		$('.disableKey').addClass('disabled');
+		setTimeout("alert('CONGRATULATIONS!')", 300);
 	}
 
 	if (!(randomWords.indexOf(x) > -1)) {
@@ -77,13 +77,11 @@ function letterButtonClicked (x) {
 	if (lives === 1) {
 		$('#cow-image').removeClass("moo4").addClass('moo5');
 	}
-
-	
 	if (lives < 1) {
 		$('.hiddenAnswer').text(randomWords.join(' '));
-		$('.btn').addClass('disabled');
-		setTimeout("alert('Game Over!')", 400);
-		$('#cow-image').remove();
+		$('.disableKey').addClass('disabled');
+		setTimeout("alert('GAME OVER! Chick-fil-A hates you right now.')", 300);
+		$('.main').empty().append('<img class="cloud9" src="images/cloud.png">');
 
 	}
 }
@@ -115,7 +113,6 @@ function heartSilhouette () {
 function area51 () {
 	$('.spaceship').append('<img class="ship" src="images/spaceship.png">');
 	$('.cow').append('<img class="moo" id="cow-image" src="images/cow.png">');
-
 }
 
 
