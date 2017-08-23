@@ -1,6 +1,6 @@
 # Hangman-Game
 
-##DESCRIPTION
+## DESCRIPTION
 
 I created a Hangman game (Area 51 version) for my first project. 
 
