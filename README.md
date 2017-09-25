@@ -1,10 +1,10 @@
 # Hangman-Game
 
-##DESCRIPTION
+## DESCRIPTION
 
 I created a Hangman game (Area 51 version) for my first project. 
 
-As soon as a user logs into the site, they  will be presented with a keyboard, blank spaces based on the number of letters in the mystery word, heart icons in the top right corner, and an image of a spaceship and a cow. The task is to figure out what the mystery word is before the spaceship abducts the cow. Users are given six chances before the cow is abducted. For every incorrect guess, the user will lose a heart and watch the cow float closer to the ship. Ultimately, the spaceship will abduct the cow and takeoff once the user uses up all the lives. The game also allows to replay the game by clicking on the replay button beneath the keyboard.
+As soon as a user logs into the site, they  will be presented with a keyboard, blank spaces based on the number of letters in the mystery word, heart icons in the top right corner, and an image of a spaceship and a cow. The task is to figure out what the mystery word is before the spaceship abducts the cow. Users are given six chances before the cow is abducted. For every incorrect guess, the user will lose a heart and watch the cow float closer to the ship. Ultimately, the spaceship will abduct the cow and takeoff once the user uses up all the lives. The game also allows the user to replay the game by clicking on the replay button beneath the keyboard.
 
 **Live App:** <http://photographer-watches-86485.bitballoon.com/>
 
@@ -23,7 +23,7 @@ As soon as a user logs into the site, they  will be presented with a keyboard, b
 
 ## WIREFRAME
 
-http://imgur.com/q94di9u
+<a href="http://imgur.com/q94di9u"><img src="http://i.imgur.com/q94di9u.jpg" title="source: imgur.com" /></a>
 
 ## Future Development
 
