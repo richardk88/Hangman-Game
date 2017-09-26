@@ -49,7 +49,7 @@ function letterButtonClicked (x) {
 
 	if (answerBox.indexOf('— ') === -1) {				//if dashes are gone
 		$('.disableKey').addClass('disabled');				//disable the keyboard
-		setTimeout("alert('CONGRATULATIONS!')", 300);			//and alert 'congratulations'
+		setTimeout("alert('Congratulations! The cow lives to see another day.')", 300);			//and alert 'congratulations'
 	}
 
 	if (!(randomWords.indexOf(x) > -1)) {			//if the word does not have the letter 

@@ -148,9 +148,9 @@ footer {
 
 
 /* TABLET SCREEN (Horizontal)*/
-@media screen and (max-width: 1150px) {
-	.ship {
-		margin: 50px;
+@media only screen and (max-width: 1150px) {
+	.spaceship {
+		margin-top: 10px;
 	}
 	#buttonCSS {
 		font-size: 1rem;
@@ -160,18 +160,44 @@ footer {
 }
 
 /* TABLET SCREEN (Vertical) */
-@media screen and (max-width: 800px) {
-	.ship {
-		margin-top: 300px;
-	}
-	#buttonCSS {
-		font-size: 1rem;
-		margin: 1px;
-		padding: ;
-	}
+@media only screen and (max-width: 800px) {
+	/* .spaceship {
+		margin-top: 200px;
+	} */
 }
 
-/* iPhone 6 SCREEN */
-@media screen and (max-width: 1150px) {
+/* iPhone 6 SCREEN (horizontal) */
+@media only screen and (max-width:400px) {
 
+}
+
+/* iPhone 6 SCREEN (vertical) */
+@media only screen and (max-width: 400px) {
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 100px;
+	}
+	.title {
+		font-size: 7rem;
+	}
+	.area51 {
+		font-size: 4rem;
+	}
+	.lives {
+		font-size: 2.4rem;
+	}
+	.hearts {
+		max-width: 12%;
+	}
+	.heartSilhouette {
+		 max-width: 12%;
+	}
+	.spaceship {
+		margin-top: 200px;
+	}
+	.keys {
+		margin-top: 500px;
+	}
 }
