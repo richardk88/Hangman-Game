@@ -38,8 +38,7 @@ h1 {
 	align-items: center;
 	justify-content: center;
 	color: white;
-	font-size: 10px;
-	max-width: 40%;
+	max-width: 50vw;
 }
 .hearts {
 	max-width: 7%;
@@ -149,14 +148,14 @@ footer {
 
 /* TABLET SCREEN (Horizontal)*/
 @media only screen and (max-width: 1150px) {
-	.spaceship {
+	/* .spaceship {
 		margin-top: 10px;
 	}
 	#buttonCSS {
 		font-size: 1rem;
 		margin: 1px;
 		padding: ;
-	}
+	} */
 }
 
 /* TABLET SCREEN (Vertical) */
@@ -172,32 +171,47 @@ footer {
 }
 
 /* iPhone 6 SCREEN (vertical) */
-@media only screen and (max-width: 400px) {
+@media screen and (max-width: 425px) {
 	.header {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		margin-top: 100px;
+		margin-top: 10px;
 	}
 	.title {
-		font-size: 7rem;
+		font-size: 2.5rem;
+		margin: 10px 0;
 	}
 	.area51 {
-		font-size: 4rem;
+		font-size: 1.5rem;
+	}
+	.scoreBox {
+		max-width: 100px;
 	}
 	.lives {
-		font-size: 2.4rem;
+		font-size: 1.9rem;
+		width: 30vw;
+		margin-top: 0;
 	}
 	.hearts {
-		max-width: 12%;
+		max-width: 4.4vw;
 	}
 	.heartSilhouette {
-		 max-width: 12%;
+		 max-width: 4.4vw;
 	}
 	.spaceship {
-		margin-top: 200px;
+		margin-top: 30px;
+	}
+	.answerContainerBox {
+		font-size: 1rem;
+		padding: 10px;
 	}
 	.keys {
-		margin-top: 500px;
+		margin-top: 5px;
+	}
+	#buttonCSS {
+		font-size: 1rem;
+		margin: 1.5px; 
+		padding: 0 9px;
 	}
 }
