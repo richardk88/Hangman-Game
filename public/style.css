@@ -148,14 +148,11 @@ footer {
 
 /* TABLET SCREEN (Horizontal)*/
 @media only screen and (max-width: 1150px) {
-	/* .spaceship {
-		margin-top: 10px;
-	}
 	#buttonCSS {
 		font-size: 1rem;
 		margin: 1px;
 		padding: ;
-	} */
+	}
 }
 
 /* TABLET SCREEN (Vertical) */
