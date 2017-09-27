@@ -78,9 +78,8 @@ function letterButtonClicked (x) {
 	if (lives < 1) {							//if lives < 1
 		$('.hiddenAnswer').text(randomWords.join(' '));			//show the answer
 		$('.disableKey').addClass('disabled');				//disable the keyboard
-		setTimeout("alert('GAME OVER! Chick-fil-A is NOT a fan...')", 300);	//alert 'game over'
+		setTimeout("alert('GAME OVER! Chick-fil-A is NOT a fan...')", 600);	//alert 'game over'
 		$('.main').empty().append('<img class="cloud9" src="images/cloud.png">');	//remove child nodes from .main and add cloud image tag.
-
 	}
 }
 
