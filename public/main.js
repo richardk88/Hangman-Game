@@ -26,7 +26,7 @@ var answerBox = [];
 var letterClicked = '';			
 hearts();
 area51();
-for (var i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
+for (let i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
 	answerBox.push('— ');
 }
 $('#emptyAnswerBox').append(answerBox);		
@@ -40,7 +40,7 @@ $('.disableKey').on('click', function(event) {
 })
 
 function letterButtonClicked (x) {
-	for (var i = 0; i < randomWords.length; i++) { 		//scans through every letter in the array
+	for (let i = 0; i < randomWords.length; i++) { 		//scans through every letter in the array
 		if (x === randomWords[i]) {  				//if the letter that was clicked equals the letters of the random word
 			answerBox[i] = x;					//then replace the blank space with the clicked letter
 		}
