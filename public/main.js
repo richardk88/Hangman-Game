@@ -1,32 +1,32 @@
 ///KEYBOARD
 //create 3 arrays for the qwerty keyboard
-var keys1 = ['Q','W','E','R','T','Y','U','I','O','P'];	
-var keys2 = ['A','S','D','F','G','H','J','K','L'];
-var keys3 = ['Z','X','C','V','B','N','M'];
+let keys1 = ['Q','W','E','R','T','Y','U','I','O','P'];	
+let keys2 = ['A','S','D','F','G','H','J','K','L'];
+let keys3 = ['Z','X','C','V','B','N','M'];
 
-for (var i = 0; i < keys1.length; i++) {		//loop through each letter in the keys1 array and create a button for each
+for (let i = 0; i < keys1.length; i++) {		//loop through each letter in the keys1 array and create a button for each
 	$('#lettersOnKeyboard1').append('<div id="buttonCSS" class="btn waves-effect waves-light disableKey green z-depth-9">' + keys1[i] + '</div>');
 }
-for (var i = 0; i < keys2.length; i++) {		//loop through each letter in the keys2 array and create a button for each
+for (let i = 0; i < keys2.length; i++) {		//loop through each letter in the keys2 array and create a button for each
 	$('#lettersOnKeyboard2').append('<div id="buttonCSS" class="btn waves-effect waves-light disableKey green z-depth-9">' + keys2[i] + '</div>');
 }
-for (var i = 0; i < keys3.length; i++) {		//loop through each letter in the keys3 array and create a button for each
+for (let i = 0; i < keys3.length; i++) {		//loop through each letter in the keys3 array and create a button for each
 	$('#lettersOnKeyboard3').append('<div id="buttonCSS" class="btn waves-effect waves-light disableKey green z-depth-9">' + keys3[i] + '</div>');
 }
 
 
 ///ANSWER BOX
 //create an array of words to randomize
-var animals = ["alligator", "alpaca", "ant", "anteater", "antelope", "ape", "armadillo", "donkey", "baboon", "badger", "barracuda", "bat", "bear", "beaver", "bee", "bison", "boar", "buffalo", "butterfly", "camel", "cat", "caterpillar", "cheetah", "chicken", "chimpanzee", "coyote", "crane", "crocodile", "crow", "deer", "dog", "dolphin", "donkey", "dove", "duck", "eagle", "elephant", "falcon", "ferret", "fish", "flamingo", "fox", "frog", "gerbil", "giraffe", "goat", "goose", "goldfish", "gorilla", "grasshopper", "hamster", "hawk", "hedgehog", "hippopotamus", "horse", "hummingbird", "hyena", "jaguar", "jellyfish", "kangaroo", "koala", "leopard", "lion", "llama", "lobster", "manatee", "mole", "mongoose", "monkey", "moose", "mouse", "mule", "octopus", "ostrich", "otter", "owl", "ox", "panda", "parrot", "peacock", "pelican", "penguin", "pig", "pigeon", "pony", "porcupine", "rabbit", "raccoon", "ram", "raven", "reindeer", "scorpion", "seahorse", "seal", "shark", "sheep", "skunk", "snail", "snake", "sparrow", "spider", "squid", "squirrel", "stingray", "stork", "swan", "tiger", "toad", "turkey", "turtle", "vulture", "walrus", "whale", "wolf", "woodpecker", "zebra"];
-var randomNumber = Math.floor(animals.length*Math.random());	
-var randomWords = animals[randomNumber].split(''); 
-var lives = 6;					//players start with 6 lives.
-var blackHearts = 0;			//heart silhouettes start at 0 and increment based on incorrect guesses.
-var answerBox = [];	
-var letterClicked = '';			
+let animals = ["alligator", "alpaca", "ant", "anteater", "antelope", "ape", "armadillo", "donkey", "baboon", "badger", "barracuda", "bat", "bear", "beaver", "bee", "bison", "boar", "buffalo", "butterfly", "camel", "cat", "caterpillar", "cheetah", "chicken", "chimpanzee", "coyote", "crane", "crocodile", "crow", "deer", "dog", "dolphin", "donkey", "dove", "duck", "eagle", "elephant", "falcon", "ferret", "fish", "flamingo", "fox", "frog", "gerbil", "giraffe", "goat", "goose", "goldfish", "gorilla", "grasshopper", "hamster", "hawk", "hedgehog", "hippopotamus", "horse", "hummingbird", "hyena", "jaguar", "jellyfish", "kangaroo", "koala", "leopard", "lion", "llama", "lobster", "manatee", "mole", "mongoose", "monkey", "moose", "mouse", "mule", "octopus", "ostrich", "otter", "owl", "ox", "panda", "parrot", "peacock", "pelican", "penguin", "pig", "pigeon", "pony", "porcupine", "rabbit", "raccoon", "ram", "raven", "reindeer", "scorpion", "seahorse", "seal", "shark", "sheep", "skunk", "snail", "snake", "sparrow", "spider", "squid", "squirrel", "stingray", "stork", "swan", "tiger", "toad", "turkey", "turtle", "vulture", "walrus", "whale", "wolf", "woodpecker", "zebra"];
+let randomNumber = Math.floor(animals.length*Math.random());	
+let randomWords = animals[randomNumber].split(''); 
+let lives = 6;					//players start with 6 lives.
+let blackHearts = 0;			//heart silhouettes start at 0 and increment based on incorrect guesses.
+let answerBox = [];	
+let letterClicked = '';			
 hearts();
 area51();
-for (var i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
+for (let i = 0; i < randomWords.length; i++) {	//loop through the length or randomWords and push '_ '
 	answerBox.push('— ');
 }
 $('#emptyAnswerBox').append(answerBox);		
